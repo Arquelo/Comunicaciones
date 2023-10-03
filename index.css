@@ -1,0 +1,96 @@
+body {
+    background-image: url("./imagen/background.jpeg");
+    background-size: cover;
+    overflow: hidden;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 20px;
+    text-align: right;
+    border-radius: 2em;
+}
+
+button {
+    width: 24%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 4em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+button:active {
+    background-color: rgba(0, 3, 48, 0.8);
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.row {
+    display: grid;
+    grid-gap: 10px;
+}
+
+.column {
+    text-align: center;
+    min-width: 20em;
+}
+
+.display {
+    max-width: 60%;
+    background-color: rgba(21, 48, 71, 0.233);
+    color: white;
+}
+
+.calculadora{
+    padding: 1em;
+    border-radius: 2em;
+    border: 2px solid transparent;
+    animation: changeBorderColor 5s linear infinite;
+    background-image: url("./imagen/Calculadora.jpg");
+    background-size: cover;
+    min-height: 25em;
+}
+
+.name {
+    position: absolute;
+    color: white;
+    opacity: 0;
+    font-size: 5em;
+    animation: fadeIn 2s ease-in-out forwards;
+    top: -1em;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes changeBorderColor {
+    0% {
+      border-color: red;
+    }
+    25% {
+      border-color: blue;
+    }
+    50% {
+      border-color: green;
+    }
+    75% {
+      border-color: yellow;
+    }
+    100% {
+      border-color: red; /* Back to the initial color */
+    }
+  }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="icon" type="image/png" href="favicon.png" />
+        <link
+            rel="stylesheet"
+            href="https://pyscript.net/latest/pyscript.css"
+        />
+        <link rel="stylesheet" href="./assets/css/examples.css" />
+        <style>
+            py-script {
+                display: none;
+            }
+        </style>
+        <script
+            type="module"
+            src="https://esm.sh/@pyscript/core@latest/core.js"
+        ></script>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<link rel="icon" href="./imagen/operaciones.png">
+<link rel="stylesheet" href="./index.css">
+
+
+<body>
+<py-tutor>
+            <py-config>
+                plugins = [
+                  "https://pyscript.net/latest/plugins/python/py_tutor.py"
+                ]
+            </py-config>
+
+            <section class="pyscript">
+                Hello world! <br />
+                This is the current date and time, as computed by Python:
+                <py-script>
+                    from pyscript import display
+                    from datetime import datetime
+                    now = datetime.now()
+                    display(now.strftime("%m/%d/%Y, %H:%M:%S"))
+                </py-script>
+            </section>
+        </py-tutor>
+
+    <div class="container">
+        <div class="row">
+            <p class="name">Calculadora</p>
+        </div>
+        <div class="row calculadora">
+            <div class="column">
+                <input class="display" type="text" id="display" readonly>
+                <button id="btnDelete" onclick="deleteDisplay()">«</button>
+            </div>
+            <div class="column">
+                <button id="btn7" onclick="appendToDisplay('7')">7</button>
+                <button id="btn8" onclick="appendToDisplay('8')">8</button>
+                <button id="btn9" onclick="appendToDisplay('9')">9</button>
+                <button id="btn+" onclick="appendToDisplay('+')">+</button>
+            </div>
+            <div class="column">
+                <button id="btn4" onclick="appendToDisplay('4')">4</button>
+                <button id="btn5" onclick="appendToDisplay('5')">5</button>
+                <button id="btn6" onclick="appendToDisplay('6')">6</button>
+                <button id="btn-" onclick="appendToDisplay('-')">-</button>
+            </div>
+            <div class="column">
+                <button id="btn1" onclick="appendToDisplay('1')">1</button>
+                <button id="btn2" onclick="appendToDisplay('2')">2</button>
+                <button id="btn3" onclick="appendToDisplay('3')">3</button>
+                <button id="btn*" onclick="appendToDisplay('*')">*</button>
+            </div>
+            <div class="column">
+                <button id="btnC" onclick="clearDisplay()">C</button>
+                <button id="btn0" onclick="appendToDisplay('0')">0</button>
+                <button id="btn=" onclick="calculateResult()">=</button>
+                <button id="btn/" onclick="appendToDisplay('/')">/</button>
+            </div>
+        </div>
+    </div>
+    <!-- <form action="">
+        <input type="text" id="number1">
+        <input type="text" id="number2">
+        <button>=</button>
+    </form> -->
+</body>
+
+</html>
+<script src="./index.js"></script>
